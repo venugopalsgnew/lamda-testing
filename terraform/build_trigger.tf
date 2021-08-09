@@ -1,8 +1,8 @@
 resource "null_resource" "my_lambda_buildstep" {
   triggers = {
-    handler      = "${base64sha256(file("../lamda/code/my_lambda_function_with_dependencies/welcome.py"))}"
-    requirements = "${base64sha256(file("../lamda/code/my_lambda_function_with_dependencies/requirements.txt"))}"
-    build        = "${base64sha256(file("../lamda/code/my_lambda_function_with_dependencies/build.sh"))}"
+    handler      = "${filebase64sha256("../lamda/code/my_lambda_function_with_dependencies/welcome.py")}"
+    requirements = "${filebase64sha256("../lamda/code/my_lambda_function_with_dependencies/requirements.txt")}"
+    build        = "${filebase64sha256("../lamda/code/my_lambda_function_with_dependencies/build.sh")}"
   }
 
   provisioner "local-exec" {
