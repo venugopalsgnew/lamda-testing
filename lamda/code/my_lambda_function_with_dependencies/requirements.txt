@@ -1,5 +1,3 @@
 camelcase==0.2
 mysql-connector
-numpy
-Pytest
-Pandas
+
